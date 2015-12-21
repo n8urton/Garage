@@ -11,7 +11,7 @@ class IfDemo {
 
     if (a < b) System.out.println("a is less then b");
 
-    //this won't display anything
+    /\this won't display anything
     if(a == b) System.out.println("you won't see this");
 
     System.out.println();
