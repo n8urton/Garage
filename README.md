@@ -27,14 +27,13 @@ The following advanced user stories are optional:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/nicb55/code_path_security_prework/blob/master/prework.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
-
+The last bank challenge was fun to solve. I was making it more complicated then it was. Once I saw the solution, I realized I was getting in my own way. Luckily, I've had the chance to work with Burp and Secure Sheperd before this, so I had Burp already set up and knew how to navigate through the site. 
 ## License
 
     Copyright [yyyy] [name of copyright owner]
