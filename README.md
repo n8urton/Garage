@@ -1,6 +1,6 @@
 # code_path_security_prework - *nicb123* 
 
-Time spent: **4** hours spent in total 
+Time spent: **3** hours spent in total 
 
 ## User Stories
 
