@@ -21,15 +21,13 @@ def subproc_error_msg(cmd, interface, *args):
 
 def change_mac(args, current_mac):
     """changes mac address or error message if unsuccessful"""
-    #if args.mac != None:
     print(f"[+] Changing {args.interface} MAC address from {current_mac} to {args.mac} ")
     subproc_error_msg("ifconfig", args.interface, "down")
     subproc_error_msg("ifconfig", args.interface, "hw", "ether", str(args.mac))
     subproc_error_msg("ifconfig", args.interface, "up")
-    #else:
-        #aise SystemExit(f"[-] No MAC address specified. {args.interface} unchanged")
 
 def get_vendor_MAC(args):
+    """takes in cli arguments and assigns vendor specified mac address to args.mac if args.restore is true"""
     if args.restore:
         ethtool_result = subproc_error_msg("ethtool", "-P", args.interface).decode("ascii")
         mac_search_result = re.search(r"(\w\w:){5}(\w\w)", ethtool_result)
@@ -38,13 +36,13 @@ def get_vendor_MAC(args):
         return args
 
 def get_current_mac(interface):
+    """takes in interface and returns current mac address or exits with message if no mac address assigned"""
     ifconfig_result = subproc_error_msg("ifconfig", interface).decode("ascii")
     mac_search_result = re.search(r"(\w\w:){5}(\w\w)", ifconfig_result)
 
     if mac_search_result:
         return mac_search_result.group(0)
     else:
-        #print(f"[-] Interface {interface} has no MAC address (loopback)")
         raise SystemExit(f"[-] Interface {interface} has no MAC address (loopback)")
 
 def main():
